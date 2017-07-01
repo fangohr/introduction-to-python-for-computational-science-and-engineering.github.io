@@ -122,3 +122,11 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+
+
+build:
+	docker build -t pelican .
+
+run:
+	@echo "Mapping port 8000 -> 8111"
+	docker run -ti -v `pwd`:/io -p 8111:8000 pelican bash
