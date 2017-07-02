@@ -30,6 +30,5 @@ USER pelican
 # Expose default Pelican port
 EXPOSE 8000
 
-
 # Run Pelican
 CMD make devserver
